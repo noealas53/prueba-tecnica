@@ -44,7 +44,7 @@ const Login = () => {
             <div className='bg-gradient-to-b from-primary to-secondary flex flex-col rounded-b-3xl tablet:rounded-r-3xl tablet:rounded-bl-none tablet:w-1/2'>
                 <h1 className='font-semibold text-4xl text-white flex items-end justify-center h-2/5 tracking-wider'>BIENVENIDO!</h1>
                 <div className='h-3/5 flex items-end justify-center'>
-                    <img src={Welcome} alt='Bienvenido' className='h-5/6 w-auto' />
+                    <img src={Welcome} alt='Bienvenido' className='h-5/6 tablet:h-3/6 laptop:h-5/6 w-auto' />
                 </div>
             </div>
             <div className='flex flex-col items-center justify-center tablet:w-1/2'>
