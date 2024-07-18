@@ -2,6 +2,7 @@ import { NavLink, useNavigate } from 'react-router-dom'
 
 const NavBar = () => {
 
+    // Navigation function
     const navigate = useNavigate()
 
     return (

@@ -11,10 +11,12 @@ const Login = () => {
     const [showPassword, setShowPassword] = useState(false)
     const navigate = useNavigate()
 
+    // Function to show or hide the password
     const handleShowPassword = () => {
         setShowPassword(!showPassword)
     }
 
+    // Form validation
     const {
         register,
         handleSubmit,
@@ -22,8 +24,9 @@ const Login = () => {
         reset,
     } = useForm()
 
+    // Function to submit the form
     const onSubmit = (data) => {
-        
+        // Check if the user exists
         user.find((user) => {
             if (user.username === data.username && user.password === data.password) {
                 toast.success('Inicio de sesión exitoso')
@@ -49,7 +52,7 @@ const Login = () => {
                 <form className='border-primary rounded-lg flex flex-col items-center py-4 px-4 gap-2 w-5/12' onSubmit={handleSubmit(onSubmit)}>
                     <label className='font-light mb-1 text-lg'>Usuario:</label>
                         <input
-                            className='border-2 border-primary rounded-md h-8 w-full px-2 text-sm'
+                            className='border-2 border-primary rounded-md h-10 w-full px-2 text-sm'
                             {...register('username', {
                                 required: 'El campo es obligatorio',
                             })}
@@ -60,12 +63,13 @@ const Login = () => {
                     <div className='flex justify-between items-center border-2 border-primary rounded-md w-full'>
                         <input
                             type={showPassword ? 'text' : 'password'}
-                            className='h-8 px-2 text-sm w-11/12'
+                            className='h-9 px-2 text-sm w-11/12'
                             {...register('password', {
                                 required: 'El campo es obligatorio',
                             })}
                         />
                         {
+                            // Show or hide password icon
                             showPassword
                                 ? <EyeSlashIcon onClick={handleShowPassword} className='cursor-pointer h-6 w-6 mx-2 text-primary' />
                                 : <EyeIcon onClick={handleShowPassword} className='cursor-pointer h-6 w-6 mx-2 text-primary' />

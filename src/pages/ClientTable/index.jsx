@@ -13,6 +13,7 @@ const ClientTable = () => {
                 </thead>
                 <tbody>
                     {
+                        // Conditional rendering of table rows
                         points.map((point, index) => {
                             if (index % 2 === 0) {
                                 return (

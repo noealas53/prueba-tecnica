@@ -6,7 +6,7 @@ import ClientTable from '../pages/ClientTable'
 import HeatMap from '../pages/HeatMap'
 
 const Navigation = () => {
-
+    // Routes definition
     let routes = useRoutes([
         { path: '/', element: <Login /> },
         { path: '/login', element: <Login /> },

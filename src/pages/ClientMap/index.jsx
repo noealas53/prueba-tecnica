@@ -1,32 +1,37 @@
-import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api'
 import React from 'react'
 import { points } from '../../data/points'
+import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api'
 
 const center = {
-    north: 14.4501,
-    south: 13.1483,
-    west: -90.1289,
-    east: -87.6886 
+    lat: 13.705243,
+    lng: -89.24231
 }
+
+const libraries = ['visualization']
 
 const ClientMap = () => {
 
+    // Google Maps API Loading
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
-        googleMapsApiKey: 'AIzaSyBjyM0CyjiksJbMk4SVzZTz-Uzn5QusoRE'
+        libraries: libraries,
+        googleMapsApiKey: "AIzaSyBjyM0CyjiksJbMk4SVzZTz-Uzn5QusoRE"
     })
 
     const [map, setMap] = React.useState(null)
 
+    // Map loading function
     const onLoad = React.useCallback(function callback(map) {
-        const bounds = new window.google.maps.LatLngBounds(center);
-        map.fitBounds(bounds);
-
-        setMap(map)
+      // This is just an example of getting and using the map instance!!! don't just blindly copy!
+      const bounds = new window.google.maps.LatLngBounds(center);
+      map.fitBounds(bounds);
+  
+      setMap(map)
     }, [])
-
+  
+    // Map dismount function
     const onUnmount = React.useCallback(function callback(map) {
-        setMap(null)
+      setMap(null)
     }, [])
 
     return isLoaded ? (
