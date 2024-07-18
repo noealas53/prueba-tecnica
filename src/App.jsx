@@ -1,10 +1,13 @@
+import { BrowserRouter } from 'react-router-dom'
+import Navigation from './navigation'
+import { ToastContainer } from 'react-toastify'
+
 const App = () => {
   return (
-    <>
-      <p className='font-bold'>
-        Hola mundo! <br />
-      </p>
-    </>
+    <BrowserRouter>
+      <Navigation />
+      <ToastContainer autoClose={700} />
+    </BrowserRouter>
   )
 }
 
