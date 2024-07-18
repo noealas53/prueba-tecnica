@@ -2,7 +2,8 @@ import { points } from '../../data/points'
 
 const ClientTable = () => {
     return (
-        <div className='flex items-start justify-center h-full pt-12 scroll-mx-2'>
+        <div className='flex flex-col items-center justify-start h-full scroll-mx-2'>
+            <h1 className='font-semibold w-full flex items-center justify-center text-3xl text-darkPurple mb-6'>Tabla de puntos</h1>
             <table className='w-4/5 table-auto'>
                 <thead className='bg-primary text-white'>
                     <tr className='text-lg'>

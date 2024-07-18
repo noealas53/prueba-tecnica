@@ -40,16 +40,16 @@ const Login = () => {
     }
 
     return (
-        <div className='flex w-full h-screen'>
-            <div className='bg-gradient-to-b from-primary to-secondary w-1/2 flex flex-col rounded-r-3xl'>
+        <div className='flex flex-col w-full h-screen tablet:flex-row'>
+            <div className='bg-gradient-to-b from-primary to-secondary flex flex-col rounded-b-3xl tablet:rounded-r-3xl tablet:rounded-bl-none tablet:w-1/2'>
                 <h1 className='font-semibold text-4xl text-white flex items-end justify-center h-2/5 tracking-wider'>BIENVENIDO!</h1>
                 <div className='h-3/5 flex items-end justify-center'>
                     <img src={Welcome} alt='Bienvenido' className='h-5/6 w-auto' />
                 </div>
             </div>
-            <div className='w-1/2 flex flex-col items-center justify-center'>
+            <div className='flex flex-col items-center justify-center tablet:w-1/2'>
                 <h2 className='font-medium text-3xl my-5 tracking-wide'>Iniciar sesión</h2>
-                <form className='border-primary rounded-lg flex flex-col items-center py-4 px-4 gap-2 w-5/12' onSubmit={handleSubmit(onSubmit)}>
+                <form className='border-primary rounded-lg flex flex-col items-center py-4 gap-2 w-2/3 laptop:w-5/12' onSubmit={handleSubmit(onSubmit)}>
                     <label className='font-light mb-1 text-lg'>Usuario:</label>
                         <input
                             className='border-2 border-primary rounded-md h-10 w-full px-2 text-sm'
